@@ -8,7 +8,7 @@ class Sound
 {
 public:
     Sound();
-    Sound(Mix_Chunk *sound);
+    Sound(Mix_Chunk* sound);
     
     // play sound method
     void play() const;

@@ -6,7 +6,7 @@ Music::Music()
     
 }
 
-Music::Music(Mix_Music *_sound)
+Music::Music(Mix_Music* _sound)
 {
     music.reset(_sound);
 }

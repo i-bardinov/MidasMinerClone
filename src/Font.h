@@ -8,9 +8,9 @@ class Font
 {
 public:
     Font();
-    Font(TTF_Font *font);
+    Font(TTF_Font* font);
     
-    TTF_Font * getSDLFont() const;
+    TTF_Font* getSDLFont() const;
     
 private:
     std::unique_ptr<TTF_Font, void(*)(TTF_Font *)> font = std::unique_ptr<TTF_Font, void (*)(TTF_Font *)>(nullptr, TTF_CloseFont);

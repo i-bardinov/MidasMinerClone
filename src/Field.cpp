@@ -7,9 +7,14 @@ Field::Field()
     
 }
 
-void Field::setTextures(std::vector<std::shared_ptr<Texture> > _gemTextures)
+void Field::setTextures(const std::vector< std::shared_ptr<Texture> >& _gemTextures)
 {
     this->gemTextures = _gemTextures;
+}
+
+void Field::setCollapseSounds(const std::vector< std::shared_ptr<Sound> >& soundsForGemCollapse)
+{
+    this->soundsCollapse = soundsForGemCollapse;
 }
 
 void Field::update(const double delta)
@@ -229,11 +234,6 @@ const int Field::getScore() const
 void Field::setScore(const int _score)
 {
     this->score = _score;
-}
-
-void Field::setCollapseSounds(std::vector< std::shared_ptr<Sound> > soundsForGemCollapse)
-{
-    this->soundsCollapse = soundsForGemCollapse;
 }
 
 std::shared_ptr<Texture> Field::getRandomGemTexture()

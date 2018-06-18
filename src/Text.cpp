@@ -6,7 +6,7 @@ Text::Text()
     
 }
 
-Text::Text(std::shared_ptr<Font> _font, const std::string& _text)
+Text::Text(const std::shared_ptr<Font>& _font, const std::string& _text)
 {
     this->font = _font;
     this->text = _text;
@@ -31,12 +31,12 @@ void Text::setColor(const Uint8 _r, const Uint8 _g, const Uint8 _b, const Uint8 
     color.a = _a;
 }
 
-std::shared_ptr<Font> Text::getFont() const
+const std::shared_ptr<Font>& Text::getFont() const
 {
     return font;
 }
 
-void Text::render(SDL_Renderer * renderer) const
+void Text::render(SDL_Renderer* renderer) const
 {
     if(!font)
         return;

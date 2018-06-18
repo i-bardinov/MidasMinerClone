@@ -19,10 +19,10 @@ class TextureEntity
 {
 public:
     TextureEntity();
-    TextureEntity(std::shared_ptr<Texture> texture, EntityAlign align = EntityAlign::LeftUpper);
+    TextureEntity(const std::shared_ptr<Texture>& texture, EntityAlign align = EntityAlign::LeftUpper);
     
     virtual void update(const double delta);
-    virtual void render(SDL_Renderer * renderer) const;
+    virtual void render(SDL_Renderer* renderer) const;
     
     // get and set position of sprite
     void setPosition(const EntityPosition position);
@@ -34,9 +34,8 @@ public:
     // return rect of sprite
     SDL_Rect getTextureRect() const;
     
-    // get and set texture of sprite
-    std::shared_ptr<Texture> getTexture() const;
-    void setTexture(const std::shared_ptr<Texture> texture);
+    // get texture of sprite
+    const std::shared_ptr<Texture>& getTexture() const;
     
 private:
     std::shared_ptr<Texture> texture;

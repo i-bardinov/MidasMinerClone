@@ -5,14 +5,14 @@ Texture::Texture()
     
 }
 
-Texture::Texture(SDL_Texture *img)
+Texture::Texture(SDL_Texture* img)
 {
     texture.reset(img);
     // get the width and height of the texture
     SDL_QueryTexture(texture.get(), NULL, NULL, &width, &height);
 }
 
-SDL_Texture * Texture::getSDLTexture() const
+SDL_Texture* Texture::getSDLTexture() const
 {
     return texture.get();
 }

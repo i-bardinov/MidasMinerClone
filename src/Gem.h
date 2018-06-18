@@ -15,10 +15,10 @@ class Gem : public TextureEntity
 {
 public:
     Gem();
-    Gem(std::shared_ptr<Texture> texture, EntityAlign align = EntityAlign::LeftUpper);
+    Gem(const std::shared_ptr<Texture>& texture, EntityAlign align = EntityAlign::LeftUpper);
     
     virtual void update(const double delta) override;
-    virtual void render(SDL_Renderer * renderer) const override;
+    virtual void render(SDL_Renderer* renderer) const override;
     
     // we can check if gems are equals by their texture
     bool isEqualTo(const Gem& anotherGem) const;

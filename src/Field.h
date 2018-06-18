@@ -12,9 +12,9 @@ public:
     Field();
     
     // set textures for gems
-    void setTextures(std::vector<std::shared_ptr<Texture> > gemTextures);
+    void setTextures(const std::vector< std::shared_ptr<Texture> >& gemTextures);
     // vector of sounds for collapsing gem
-    void setCollapseSounds(std::vector< std::shared_ptr<Sound> > soundsForGemCollapse);
+    void setCollapseSounds(const std::vector< std::shared_ptr<Sound> >& soundsForGemCollapse);
     
     // generate new field of gems
     void generateGems();

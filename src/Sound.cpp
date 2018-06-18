@@ -6,7 +6,7 @@ Sound::Sound()
     
 }
 
-Sound::Sound(Mix_Chunk *_sound)
+Sound::Sound(Mix_Chunk* _sound)
 {
     sound.reset(_sound);
 }

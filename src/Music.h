@@ -8,11 +8,12 @@ class Music
 {
 public:
     Music();
-    Music(Mix_Music *sound);
+    Music(Mix_Music* sound);
     
     // play music method
     void play() const;
     
+    // change volume for music
     void setVolume(Uint8 volume);
     
 private:

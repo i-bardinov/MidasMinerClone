@@ -8,9 +8,9 @@ class Texture
 {
 public:
     Texture();
-    Texture(SDL_Texture *img);
+    Texture(SDL_Texture* img);
     
-    SDL_Texture * getSDLTexture() const;
+    SDL_Texture* getSDLTexture() const;
     
     void setTransparency(const Uint8 transparency);
     
