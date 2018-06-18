@@ -7,18 +7,16 @@ It uses these libraries:
 - SDL_mixer;
 
 Use 
-
-brew install sdl2 sdl2_image sdl2_mixer sdl2_ttf
-
+`brew install sdl2 sdl2_image sdl2_mixer sdl2_ttf`
 to install these libraries.
 
 It uses CMake as a build system. Run following commands from project's root in that folder:
-
-mkdir build
+```mkdir build
 cd build
 cmake ..
 cmake --build .
 ../bin/MidasMinerClone
+```
 
 Assets are in bin/assets folder.
 
