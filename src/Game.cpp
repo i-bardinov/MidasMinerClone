@@ -195,16 +195,16 @@ void Game::loadFonts()
     font = engine.loadFont(FONT_MAIN);
     
     scoreText = Text(font, "");
-    scoreText.setPosition(20, 10);
+    scoreText.setPosition(25, 10);
     
     startText = Text(font, TEXT_START);
-    startText.setPosition(WINDOW_WIDTH / 2.1f, WINDOW_HEIGHT / 2.55f);
+    startText.setPosition(WINDOW_WIDTH / 3.1f, WINDOW_HEIGHT / 2.3f);
     
     restartText = Text(font, TEXT_RESTART);
-    restartText.setPosition(WINDOW_WIDTH / 2.2f, WINDOW_HEIGHT / 2.55f);
+    restartText.setPosition(WINDOW_WIDTH / 3.2f, WINDOW_HEIGHT / 2.3f);
     
     timerText = Text(font, " ");
-    timerText.setPosition(20, 50);
+    timerText.setPosition(WINDOW_WIDTH - 175, 10);
 }
 
 void Game::loadAudio()

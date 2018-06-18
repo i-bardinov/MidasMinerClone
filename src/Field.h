@@ -20,7 +20,7 @@ public:
     void generateGems();
     
     void update(const double delta);
-    void render(SDL_Renderer * renderer) const;
+    void render(SDL_Renderer* renderer) const;
     
     // reset parameters of field
     void reset();

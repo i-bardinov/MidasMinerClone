@@ -108,7 +108,7 @@ void Engine::renderStop() const
     SDL_RenderPresent(renderer.get());
 }
 
-SDL_Renderer * Engine::getRenderer() const
+SDL_Renderer* Engine::getRenderer() const
 {
     return renderer.get();
 }

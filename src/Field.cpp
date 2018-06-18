@@ -110,7 +110,7 @@ void Field::update(const double delta)
     }
 }
 
-void Field::render(SDL_Renderer * renderer) const
+void Field::render(SDL_Renderer* renderer) const
 {
     for(const Gem &gem : gems)
     {

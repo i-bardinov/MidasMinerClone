@@ -32,7 +32,7 @@ public:
     const int getMousePositionX() const;
     const int getMousePositionY() const;
     
-    SDL_Renderer * getRenderer() const;
+    SDL_Renderer* getRenderer() const;
     
     // load game assets in engine
     std::shared_ptr<Texture> loadTexture(const std::string& textureName);
