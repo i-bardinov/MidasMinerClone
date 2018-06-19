@@ -20,6 +20,4 @@ cmake --build .
 ../bin/MidasMinerClone
 ```
 
-Assets are in `bin/assets` folder.
-
-MacOS executable in `bin` folder.
+Assets are in `assets` folder.
