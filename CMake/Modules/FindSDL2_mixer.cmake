@@ -4,16 +4,25 @@
 #  SDL2_MIXER_INCLUDE_DIRS - SDL2_mixer include directories
 #  SDL2_MIXER_LIBRARIES - Libraries needed to link against SDL2_mixer
 
-find_path(SDL2_MIXER_INCLUDE_DIR 
-  NAMES SDL_mixer.h
-  PATHS ENV SDL2MIXER
-  PATH_SUFFIXES include/SDL2 include
+find_path(SDL2_MIXER_INCLUDE_DIR SDL_mixer.h
+        HINTS
+        ENV SDL2MIXER
+	ENV SDL2MIXERDIR
+        ENV SDL2DIR
+        PATH_SUFFIXES SDL2
+        # path suffixes to search inside ENV{SDLDIR}
+        include/SDL2 include
+        PATHS ${SDL2_PATH}
 )
 
 find_library(SDL2_MIXER_LIBRARY
-  NAMES SDL2_mixer
-  PATHS ENV SDL2MIXER
-  PATH_SUFFIXES lib lib/x64
+        NAMES SDL2_mixer
+        HINTS
+        ENV SDL2MIXERDIR
+        ENV SDL2MIXER
+        ENV SDL2DIR
+        PATH_SUFFIXES lib ${VC_LIB_PATH_SUFFIX}
+        PATHS ${SDL2_PATH}
 )
 
 set(SDL2_MIXER_LIBRARIES ${SDL2_MIXER_LIBRARY})
