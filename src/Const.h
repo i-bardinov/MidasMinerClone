@@ -7,6 +7,7 @@ const int WINDOW_WIDTH = 755;
 const int WINDOW_HEIGHT = 600;
 
 const double GAME_TIMER = 60000.0f;
+const double ADDITIONAL_TIMER = 2000.0f;
 
 const std::string ASSETS_PATH = "./assets/";
 

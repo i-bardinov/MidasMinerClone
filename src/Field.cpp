@@ -38,6 +38,11 @@ void Field::update(const double delta)
         }
     }
     
+    if(gameTimer > 0)
+    {
+        gameTimer -= delta;
+    }
+    
     // check if we can swipe two gems
     if(swipedGemOne != -1 && swipedGemTwo != -1)
     {
@@ -191,6 +196,16 @@ void Field::reset()
     removeScore = 0.0f;
 }
 
+void Field::startTimer()
+{
+    gameTimer = GAME_TIMER;
+}
+
+const double Field::getTimer()
+{
+    return gameTimer;
+}
+
 void Field::onGemClick(const int gemPosition)
 {
     // action on clicking on gem => we can make it selected or we can swipe two gems
@@ -300,6 +315,7 @@ const bool Field::tryToCollapseGem(const int gemPosition)
         {
             int random = rand() % soundsCollapse.size();
             soundsCollapse[random]->play();
+            gameTimer += ADDITIONAL_TIMER;
         }
     }
     

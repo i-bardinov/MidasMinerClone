@@ -25,6 +25,10 @@ public:
     // reset parameters of field
     void reset();
     
+    // start timer ticking
+    void startTimer();
+    const double getTimer();
+    
     // called when clicking on gem
     void onGemClick(const int gemPosition);
     
@@ -52,6 +56,7 @@ private:
     
     int score;
     double removeScore = 0.0f;
+    double gameTimer = 0.0f;
 };
 
 #endif

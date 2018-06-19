@@ -18,7 +18,7 @@ void Music::play() const
     
     Mix_VolumeMusic(volume);
     // play sound
-    if(Mix_PlayMusic(music.get(), 1) == -1)
+    if(Mix_PlayMusic(music.get(), 1000) == -1)
     {
         std::cout << "Mix_PlayMusic Error: " << Mix_GetError() << std::endl;
         return;

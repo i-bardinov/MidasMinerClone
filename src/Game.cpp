@@ -59,20 +59,15 @@ void Game::update()
             waitTime -= deltaTime;
         } else if(state == GameState::Loading) {
             state = GameState::Playing;
-            gameTime = GAME_TIMER;
+            playField.startTimer();
         }
         
-        // game timer
-        if(state == GameState::Playing)
+        // end game when timer is ended
+        if(state == GameState::Playing && playField.getTimer() <= 0.0f)
         {
-            if(gameTime > 0.0f)
-            {
-                gameTime -= deltaTime;
-            } else if(state == GameState::Playing){
-                state = GameState::Ended;
-                playField.reset();
-                musicGameOver->play();
-            }
+            state = GameState::Ended;
+            playField.reset();
+            musicGameOver->play();
         }
         
         if(!engine.update(inputs))
@@ -133,8 +128,13 @@ void Game::update()
         
         scoreText.setText(TEXT_SCORE + std::to_string(playField.getScore()));
         
-        int yourTime = static_cast<int>(gameTime / 1000.0f);
-        std::string addditionalString = TEXT_TIME + "0:";
+        int yourTime = static_cast<int>(playField.getTimer() / 1000.0f);
+        int minutes = yourTime / 60;
+        if(yourTime > 0)
+        {
+            yourTime = yourTime % 60;
+        }
+        std::string addditionalString = TEXT_TIME + std::to_string(minutes) + ":";
         if(yourTime < 10)
             addditionalString += "0";
         timerText.setText(addditionalString + std::to_string(yourTime));

@@ -64,7 +64,6 @@ private:
     GameState state = GameState::None;
     double prevTime = 0.0f;
     double waitTime = 0.0f;
-    double gameTime = 0.0f;
     
     std::shared_ptr<Font> font;
     
