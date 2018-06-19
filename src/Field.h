@@ -37,7 +37,7 @@ public:
     void setScore(const int score);
     
     // return random texture for field generation
-    std::shared_ptr<Texture> getRandomGemTexture();
+    std::shared_ptr<Texture>& getRandomGemTexture();
     // get gem by click in field
     const int getGemPosByMouseCoordinates(const int x, const int y) const;
     

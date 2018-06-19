@@ -251,7 +251,7 @@ void Field::setScore(const int _score)
     this->score = _score;
 }
 
-std::shared_ptr<Texture> Field::getRandomGemTexture()
+std::shared_ptr<Texture>& Field::getRandomGemTexture()
 {
     int random = rand() % gemTextures.size();
     return gemTextures[random];
