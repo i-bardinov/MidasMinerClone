@@ -131,7 +131,10 @@ void Field::generateGems()
     int posY = FIELD_START_Y - GEM_SIZE / 2;
     for(int i = 0; i < GEM_ROWS * GEM_COLUMNS; i++)
     {
-        if(i % GEM_COLUMNS == 0)
+        int columnNumber = i % GEM_COLUMNS;
+        int rowNumber = i / GEM_COLUMNS;
+        
+        if(columnNumber == 0)
         {
             posX = FIELD_START_X + GEM_SIZE / 2;
             posY += GEM_SIZE;
@@ -139,7 +142,8 @@ void Field::generateGems()
         
         int random = rand() % gemTextures.size();
         std::shared_ptr<Texture> randomTexture = gemTextures[random];
-        if(i % GEM_COLUMNS >= 2)
+        
+        if(columnNumber >= 2)
         {
             Gem prevGem1 = gems[i - 1];
             Gem prevGem2 = gems[i - 2];
@@ -150,7 +154,7 @@ void Field::generateGems()
                 randomTexture = gemTextures[random];
             }
         }
-        if(i / GEM_COLUMNS >= 2)
+        if(rowNumber >= 2)
         {
             Gem prevGem1 = gems[i - 1 * GEM_COLUMNS];
             Gem prevGem2 = gems[i - 2 * GEM_COLUMNS];
@@ -159,28 +163,27 @@ void Field::generateGems()
             {
                 random = (random + 1) % gemTextures.size();
                 randomTexture = gemTextures[random];
-            }
-        }
-        if(i % GEM_COLUMNS >= 2)
-        {
-            Gem prevGem1 = gems[i - 1];
-            Gem prevGem2 = gems[i - 2];
-            // check if there are three gems with same colour => regenerate third gem for another color
-            if(prevGem1.getTexture() == randomTexture && prevGem2.getTexture() == randomTexture)
-            {
-                random = (random + 1) % gemTextures.size();
-                randomTexture = gemTextures[random];
+                
+                if(columnNumber >= 2)
+                {
+                    prevGem1 = gems[i - 1];
+                    prevGem2 = gems[i - 2];
+                    // check if there are three gems with same colour => regenerate third gem for another color
+                    if(prevGem1.getTexture() == randomTexture && prevGem2.getTexture() == randomTexture)
+                    {
+                        random = (random + 1) % gemTextures.size();
+                        randomTexture = gemTextures[random];
+                    }
+                }
             }
         }
         
         Gem gem(randomTexture, EntityAlign::Center);
-        EntityPosition pos;
-        pos.x = posX;
-        pos.y = posY;
+        EntityPosition pos = { posX, posY };
         gem.setPosition(pos);
         gem.setVisible(false);
         // make gem appears in different time as an effect
-        gem.changeVisibility(15 * (GEM_ROWS * GEM_COLUMNS - i));
+        gem.changeVisibility(20 * (GEM_ROWS * GEM_COLUMNS - i));
         gems.push_back(gem);
         
         posX += GEM_SIZE;
