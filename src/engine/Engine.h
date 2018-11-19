@@ -9,7 +9,7 @@
 #include <list>
 #include <string>
 
-#include "Texture.h"
+#include "Sprite.h"
 #include "Font.h"
 #include "Sound.h"
 #include "Music.h"
@@ -35,7 +35,7 @@ public:
     SDL_Renderer* getRenderer() const;
     
     // load game assets in engine
-    std::shared_ptr<Texture> loadTexture(const std::string& textureName);
+    std::shared_ptr<Sprite> loadTexture(const std::string& textureName);
     std::shared_ptr<Font> loadFont(const std::string& fontName);
     std::shared_ptr<Sound> loadSound(const std::string& soundName);
     std::shared_ptr<Music> loadMusic(const std::string& musicName);

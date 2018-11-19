@@ -6,7 +6,7 @@ Gem::Gem() : TextureEntity()
     
 }
 
-Gem::Gem(const std::shared_ptr<Texture>& texture, EntityAlign align) : TextureEntity(texture, align)
+Gem::Gem(const std::shared_ptr<Sprite>& texture, EntityAlign align) : TextureEntity(texture, align)
 {
     
 }

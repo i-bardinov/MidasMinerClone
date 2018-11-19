@@ -7,8 +7,8 @@
 class Texture
 {
 public:
-    Texture();
-    Texture(SDL_Texture* img);
+    Sprite();
+    Sprite(SDL_Texture* img);
     
     SDL_Texture* getSDLTexture() const;
     

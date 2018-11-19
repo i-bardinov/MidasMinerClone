@@ -5,7 +5,7 @@ TextureEntity::TextureEntity()
     
 }
 
-TextureEntity::TextureEntity(const std::shared_ptr<Texture>& _texture, EntityAlign _align)
+TextureEntity::TextureEntity(const std::shared_ptr<Sprite>& _texture, EntityAlign _align)
 {
     this->texture = _texture;
     this->align = _align;
@@ -49,7 +49,7 @@ SDL_Rect TextureEntity::getTextureRect() const
     return rect;
 }
 
-const std::shared_ptr<Texture>& TextureEntity::getTexture() const
+const std::shared_ptr<Sprite>& TextureEntity::getTexture() const
 {
     return texture;
 }

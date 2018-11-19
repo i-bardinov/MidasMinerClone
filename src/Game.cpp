@@ -3,7 +3,7 @@
 
 #include "Game.h"
 #include "Const.h"
-#include "Texture.h"
+#include "engine/Sprite.h"
 
 Game::Game()
 {
@@ -171,14 +171,14 @@ void Game::render() const
 
 void Game::loadTextures()
 {
-    std::shared_ptr<Texture> backgroundTexture = engine.loadTexture(IMAGE_BACKGROUND);
-    std::shared_ptr<Texture> blueGemTexture = engine.loadTexture(IMAGE_BLUE_GEM);
-    std::shared_ptr<Texture> redGemTexture = engine.loadTexture(IMAGE_RED_GEM);
-    std::shared_ptr<Texture> yellowGemTexture = engine.loadTexture(IMAGE_YELLOW_GEM);
-    std::shared_ptr<Texture> purpleGemTexture = engine.loadTexture(IMAGE_PURPLE_GEM);
-    std::shared_ptr<Texture> greenGemTexture = engine.loadTexture(IMAGE_GREEN_GEM);
+    std::shared_ptr<Sprite> backgroundTexture = engine.loadTexture(IMAGE_BACKGROUND);
+    std::shared_ptr<Sprite> blueGemTexture = engine.loadTexture(IMAGE_BLUE_GEM);
+    std::shared_ptr<Sprite> redGemTexture = engine.loadTexture(IMAGE_RED_GEM);
+    std::shared_ptr<Sprite> yellowGemTexture = engine.loadTexture(IMAGE_YELLOW_GEM);
+    std::shared_ptr<Sprite> purpleGemTexture = engine.loadTexture(IMAGE_PURPLE_GEM);
+    std::shared_ptr<Sprite> greenGemTexture = engine.loadTexture(IMAGE_GREEN_GEM);
     
-    std::vector<std::shared_ptr<Texture> > textures;
+    std::vector<std::shared_ptr<Sprite> > textures;
     textures.push_back(blueGemTexture);
     textures.push_back(redGemTexture);
     textures.push_back(yellowGemTexture);

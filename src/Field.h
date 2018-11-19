@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "Gem.h"
-#include "Sound.h"
+#include "engine/Sound.h"
 
 class Field
 {
@@ -12,7 +12,7 @@ public:
     Field();
     
     // set textures for gems
-    void setTextures(const std::vector< std::shared_ptr<Texture> >& gemTextures);
+    void setTextures(const std::vector< std::shared_ptr<Sprite> >& gemTextures);
     // vector of sounds for collapsing gem
     void setCollapseSounds(const std::vector< std::shared_ptr<Sound> >& soundsForGemCollapse);
     
@@ -37,7 +37,7 @@ public:
     void setScore(const int score);
     
     // return random texture for field generation
-    std::shared_ptr<Texture>& getRandomGemTexture();
+    std::shared_ptr<Sprite>& getRandomGemTexture();
     // get gem by click in field
     const int getGemPosByMouseCoordinates(const int x, const int y) const;
     
@@ -46,7 +46,7 @@ private:
     std::vector<int> getCollapseColumnForPosition(const int gemPosition) const;
     std::vector<int> getCollapseRowForPosition(const int gemPosition) const;
     
-    std::vector< std::shared_ptr<Texture> > gemTextures;
+    std::vector< std::shared_ptr<Sprite> > gemTextures;
     std::vector< std::shared_ptr<Sound> > soundsCollapse;
     std::vector<Gem> gems;
     

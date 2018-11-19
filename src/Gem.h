@@ -15,7 +15,7 @@ class Gem : public TextureEntity
 {
 public:
     Gem();
-    Gem(const std::shared_ptr<Texture>& texture, EntityAlign align = EntityAlign::LeftUpper);
+    Gem(const std::shared_ptr<Sprite>& texture, EntityAlign align = EntityAlign::LeftUpper);
     
     virtual void update(const double delta) override;
     virtual void render(SDL_Renderer* renderer) const override;

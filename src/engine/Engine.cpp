@@ -123,7 +123,7 @@ const int Engine::getMousePositionY() const
     return mousePosY;
 }
 
-std::shared_ptr<Texture> Engine::loadTexture(const std::string& textureName)
+std::shared_ptr<Sprite> Engine::loadTexture(const std::string& textureName)
 {
     std::string fullPath = ASSETS_PATH + textureName;
     // load our image
@@ -133,7 +133,7 @@ std::shared_ptr<Texture> Engine::loadTexture(const std::string& textureName)
         std::cout << "IMG_LoadTexture Error: " << SDL_GetError() << std::endl;
     }
     
-    std::shared_ptr<Texture> texture(new Texture(img));
+    std::shared_ptr<Sprite> texture(new Sprite(img));
     
     return texture;
 }

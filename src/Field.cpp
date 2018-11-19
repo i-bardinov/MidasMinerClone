@@ -7,7 +7,7 @@ Field::Field()
     
 }
 
-void Field::setTextures(const std::vector< std::shared_ptr<Texture> >& _gemTextures)
+void Field::setTextures(const std::vector< std::shared_ptr<Sprite> >& _gemTextures)
 {
     this->gemTextures = _gemTextures;
 }
@@ -141,7 +141,7 @@ void Field::generateGems()
         }
         
         int random = rand() % gemTextures.size();
-        std::shared_ptr<Texture> randomTexture = gemTextures[random];
+        std::shared_ptr<Sprite> randomTexture = gemTextures[random];
         
         if(columnNumber >= 2)
         {
@@ -254,7 +254,7 @@ void Field::setScore(const int _score)
     this->score = _score;
 }
 
-std::shared_ptr<Texture>& Field::getRandomGemTexture()
+std::shared_ptr<Sprite>& Field::getRandomGemTexture()
 {
     int random = rand() % gemTextures.size();
     return gemTextures[random];

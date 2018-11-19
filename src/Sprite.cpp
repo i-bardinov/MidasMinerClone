@@ -1,33 +1,33 @@
-#include "Texture.h"
+#include "Sprite.h"
 
-Texture::Texture()
+Sprite::Sprite()
 {
     
 }
 
-Texture::Texture(SDL_Texture* img)
+Sprite::Sprite(SDL_Texture* img)
 {
     texture.reset(img);
     // get the width and height of the texture
     SDL_QueryTexture(texture.get(), NULL, NULL, &width, &height);
 }
 
-SDL_Texture* Texture::getSDLTexture() const
+SDL_Texture* Sprite::getSDLTexture() const
 {
     return texture.get();
 }
 
-void Texture::setTransparency(const Uint8 transparency)
+void Sprite::setTransparency(const Uint8 transparency)
 {
     SDL_SetTextureAlphaMod(texture.get(), transparency);
 }
 
-const int Texture::getWidth() const
+const int Sprite::getWidth() const
 {
     return width;
 }
 
-const int Texture::getHeight() const
+const int Sprite::getHeight() const
 {
     return height;
 }

@@ -1,7 +1,7 @@
 #ifndef TEXTURE_ENTITY_H
 #define TEXTURE_ENTITY_H
 
-#include <Texture.h>
+#include <engine/Sprite.h>
 
 struct EntityPosition
 {
@@ -19,7 +19,7 @@ class TextureEntity
 {
 public:
     TextureEntity();
-    TextureEntity(const std::shared_ptr<Texture>& texture, EntityAlign align = EntityAlign::LeftUpper);
+    TextureEntity(const std::shared_ptr<Sprite>& texture, EntityAlign align = EntityAlign::LeftUpper);
     
     virtual void update(const double delta);
     virtual void render(SDL_Renderer* renderer) const;
@@ -35,10 +35,10 @@ public:
     SDL_Rect getTextureRect() const;
     
     // get texture of sprite
-    const std::shared_ptr<Texture>& getTexture() const;
+    const std::shared_ptr<Sprite>& getTexture() const;
     
 private:
-    std::shared_ptr<Texture> texture;
+    std::shared_ptr<Sprite> texture;
     
     EntityPosition position;
     EntityAlign align = EntityAlign::LeftUpper;

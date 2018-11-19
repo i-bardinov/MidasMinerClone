@@ -1,17 +1,17 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "Engine.h"
+#include "engine/Engine.h"
 
 #include <vector>
 #include <list>
 #include <string>
 
 #include "TextureEntity.h"
-#include "Texture.h"
-#include "Font.h"
-#include "Sound.h"
-#include "Music.h"
+#include "engine/Sprite.h"
+#include "engine/Font.h"
+#include "engine/Sound.h"
+#include "engine/Music.h"
 #include "Text.h"
 #include "Gem.h"
 #include "Field.h"

@@ -29,7 +29,7 @@ SET( CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${EXECUTABLE_OUTPUT_PATH})
 
 file(COPY assets DESTINATION ../bin)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 # directory with main sources
 add_subdirectory(src)
@@ -38,26 +38,26 @@ include_directories(
     "src"
 )
 
-assign_source_group(${MIDAS_MINER_TEST_SOURCES})
+assign_source_group(${MIDAS_MINER_SOURCES})
 
 add_executable(${PROJECT_NAME}
-    ${MIDAS_MINER_TEST_SOURCES}
+    ${MIDAS_MINER_SOURCES}
 )
 
 find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
+include_directories(${SDL2_INCLUDE_DIR})
 
 find_package(SDL2_TTF REQUIRED)
-include_directories(${SDL2_TTF_INCLUDE_DIRS})
+include_directories(${SDL2_TTF_INCLUDE_DIR})
 
 find_package(SDL2_IMAGE REQUIRED)
-include_directories(${SDL2_IMAGE_INCLUDE_DIRS})
+include_directories(${SDL2_IMAGE_INCLUDE_DIR})
 
 find_package(SDL2_MIXER REQUIRED)
-include_directories(${SDL2_MIXER_INCLUDE_DIRS})
+include_directories(${SDL2_MIXER_INCLUDE_DIR})
 
 target_link_libraries(${PROJECT_NAME}
-    ${SDL2_LIBRARIES}
+    ${SDL2_LIBRARY}
     ${SDL2_TTF_LIBRARIES}
     ${SDL2_IMAGE_LIBRARIES}
     ${SDL2_MIXER_LIBRARIES}
